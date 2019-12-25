@@ -14,8 +14,8 @@ namespace ServiceProxy
     public sealed class ServerServiceProxy : IServerOperator
     {
         #region - Variables 
-        private ServerServiceClient mClientFactory = null;
-        private static ServerServiceProxy mInstance =new ServerServiceProxy();
+        private ServerServiceClient mClient = null;
+        private static ServerServiceProxy mInstance = new ServerServiceProxy();
         private const string CLIENT_ENPOINT_NAME = "defaultEndpoint";
         #endregion
 
@@ -26,7 +26,7 @@ namespace ServiceProxy
         #region - Constructors -
         private ServerServiceProxy()
         {
-          
+
 
         }
         #endregion
@@ -38,14 +38,15 @@ namespace ServiceProxy
         }
         public void Join(ClientData client)
         {
-            if (null != mClientFactory)
+            if (null != mClient || null == client)
             {
                 return;
             }
-            mClientFactory = new ServerServiceClient(new InstanceContext(new ServerCallback()), CLIENT_ENPOINT_NAME);
+            mClient = new ServerServiceClient(new InstanceContext(new ServerCallback()),CLIENT_ENPOINT_NAME);
+            client.Port = mClient.Endpoint.Address.Uri.Port.ToString();           
             try
             {
-                mClientFactory.Join(client);
+                mClient.Join(client);
             }
             catch (Exception ex)
             {
@@ -57,30 +58,30 @@ namespace ServiceProxy
         {
             try
             {
-                mClientFactory.Send(null);
+                mClient.Send(null);
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine("服务器连接失败"); ;
-            }           
+            }
         }
 
         public void Exit()
         {
-            if (null!= mClientFactory)
+            if (null != mClient)
             {
-                mClientFactory.Exit();
+                mClient.Exit();
             }
         }
         public void Add(double x, double y)
         {
-            mClientFactory.Add(x, y);
+            mClient.Add(x, y);
         }
-       
+
         public void Send(string testBeatHeat)
         {
-            mClientFactory.Send(testBeatHeat);
+            mClient.Send(testBeatHeat);
         }
 
         #endregion

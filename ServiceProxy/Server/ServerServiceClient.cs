@@ -12,22 +12,10 @@ namespace ServiceProxy
 {
     public sealed class ServerServiceClient : DuplexClientBase<IServerOperator>, IServerOperator
     {
-        public ServerServiceClient(InstanceContext callBackInstance) : base(callBackInstance)
-        {
-
-        }
-
-        public ServerServiceClient(InstanceContext callBackInstance, ServiceEndpoint endpoint) : base(callBackInstance, endpoint)
-        {
-            
-        }
-        public ServerServiceClient(InstanceContext callBackInstance, string endpointConfiguratonName) : base(callBackInstance, endpointConfiguratonName)
-        {
-        }
-        public ServerServiceClient(InstanceContext callBackInstance, string endpointConfiguratonName, string remoteAddress) : base(callBackInstance, endpointConfiguratonName, remoteAddress)
-        {
-
-        }
+        public ServerServiceClient(InstanceContext callBackInstance) : base(callBackInstance) { }
+        public ServerServiceClient(InstanceContext callBackInstance, ServiceEndpoint endpoint) : base(callBackInstance, endpoint) { }
+        public ServerServiceClient(InstanceContext callBackInstance, string endpointConfiguratonName) : base(callBackInstance, endpointConfiguratonName) { }
+        public ServerServiceClient(InstanceContext callBackInstance, string endpointConfiguratonName, string remoteAddress) : base(callBackInstance, endpointConfiguratonName, remoteAddress) { }
         public void Join(ClientData client)
         {
             try
@@ -38,7 +26,7 @@ namespace ServiceProxy
             {
                 Console.WriteLine(ex.Message);
             }
-            
+
         }
         public void Exit()
         {
@@ -48,9 +36,9 @@ namespace ServiceProxy
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);                
+                Console.WriteLine(ex.Message);
             }
-           
+
         }
         public void Add(double x, double y)
         {

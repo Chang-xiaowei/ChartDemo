@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -14,7 +15,7 @@ namespace ChartServerModule
     [ServiceBehavior(InstanceContextMode =InstanceContextMode.Single,
                      AddressFilterMode=AddressFilterMode.Prefix,
                      ConcurrencyMode = ConcurrencyMode.Multiple)]
-    public class ServerOperatorService : IServerOperator
+    public class ServerOperatorService : IServerOperator,IDisposable
     {
         #region - Variables 
         private List<string> mClientListenList = new List<string>();
@@ -36,6 +37,12 @@ namespace ChartServerModule
             double result = x + y;
             OperationContext.Current.GetCallbackChannel<IServerCallback>().Display(result);           
         }
+
+        public void Dispose()
+        {
+            //
+        }
+
         public void Exit()
         {
             string sessionId = OperationContext.Current.SessionId;
@@ -45,12 +52,14 @@ namespace ChartServerModule
         public void Join(ClientData client)
         {
             string sessionID = OperationContext.Current.SessionId;
-            if (!mClientDatadics.ContainsKey(sessionID))
+            if (mClientDatadics.ContainsKey(sessionID))
             {
-                mClientDatadics.TryAdd(sessionID, client);
-            }                  
+                Trace.WriteLine($"Existed Client  Name :[{client.Name}] IP:[{client.IP}]");
+                return;
+            }
+            mClientDatadics.TryAdd(sessionID, client);            
             Console.WriteLine("*********************======连接服务的个数****************");
-            Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] Join Name[{client.Name}] IP [{client.IP}]");
+            Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] Join  Name [{client.Name}] IP [{client.IP}]");
             Console.WriteLine("Listener count:" + mClientDatadics.Count().ToString());         
         }
 

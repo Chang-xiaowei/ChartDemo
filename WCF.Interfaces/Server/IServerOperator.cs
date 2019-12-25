@@ -8,20 +8,22 @@ using WCF.Datas;
 
 namespace WCF.Interfaces
 {
-    [ServiceContract(SessionMode = SessionMode.Required,
+    [ServiceContract(Name = "ServerOperatorService",
+                     SessionMode = SessionMode.Required,
+                     Namespace = "",
                      CallbackContract = typeof(IServerCallback))]
     public interface IServerOperator
     {
         [OperationContract(IsOneWay = true, IsInitiating = true, IsTerminating = false)]
         void Join(ClientData client);
 
-        [OperationContract(IsOneWay = true, IsInitiating = true, IsTerminating = true)]
+        [OperationContract(IsOneWay = true, IsInitiating = false, IsTerminating = true)]
         void Exit();
 
-        [OperationContract(IsOneWay = true, IsInitiating = false, IsTerminating = false)]
+        [OperationContract(IsOneWay = true, IsInitiating = true, IsTerminating = false)]
         void Add(double x, double y);
 
-        [OperationContract(IsOneWay = true)]
+        [OperationContract(IsOneWay = true,IsInitiating =true,IsTerminating =false)]
         void Send(string testBeatHea);//为了测试心跳
     }
 }
