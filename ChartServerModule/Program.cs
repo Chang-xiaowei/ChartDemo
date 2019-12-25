@@ -1,0 +1,23 @@
+﻿using System;
+using System.ServiceModel;
+
+namespace ChartServerModule
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (ServiceHost host=new ServiceHost(typeof(ServerOperatorService)))
+            {
+                host.Opened += Host_Opened;
+                host.Open();
+                Console.ReadKey();
+            }
+        }
+
+        private static void Host_Opened(object sender, EventArgs e)
+        {
+            Console.WriteLine("服务已经打开");
+        }
+    }
+}
