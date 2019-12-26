@@ -14,7 +14,7 @@ namespace _1.StopWatchDemo
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            Thread.Sleep(1001);
+            Thread.Sleep(1000);
             stopwatch.Stop();
             Console.WriteLine("耗时"+stopwatch.ElapsedMilliseconds);
             Console.ReadKey();
