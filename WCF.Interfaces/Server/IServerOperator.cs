@@ -9,8 +9,7 @@ using WCF.Datas;
 namespace WCF.Interfaces
 {
     [ServiceContract(Name = "ServerOperatorService",
-                     SessionMode = SessionMode.Required,
-                     Namespace = "",
+                     SessionMode = SessionMode.Required,                   
                      CallbackContract = typeof(IServerCallback))]
     public interface IServerOperator
     {

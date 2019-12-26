@@ -9,9 +9,11 @@ namespace ChartServerModule
         {
             using (ServiceHost host=new ServiceHost(typeof(ServerOperatorService)))
             {
+                host.Opened -= Host_Opened;
                 host.Opened += Host_Opened;
                 host.Open();
                 Console.ReadKey();
+                host.Close();
             }
         }
 

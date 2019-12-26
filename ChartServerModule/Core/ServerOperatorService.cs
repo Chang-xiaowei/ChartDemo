@@ -13,7 +13,7 @@ namespace ChartServerModule
 {
 
     [ServiceBehavior(InstanceContextMode =InstanceContextMode.Single,
-                     AddressFilterMode=AddressFilterMode.Prefix,
+                     AddressFilterMode=AddressFilterMode.Any,
                      ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class ServerOperatorService : IServerOperator,IDisposable
     {
@@ -49,6 +49,7 @@ namespace ChartServerModule
             mClientDatadics.TryRemove(sessionId, out ClientData clientData);
             Console.WriteLine($"Exit Connction {DateTime.Now.ToString()}: Name :{clientData.Name }: IP: {clientData.IP}");
         }
+
         public void Join(ClientData client)
         {
             string sessionID = OperationContext.Current.SessionId;
