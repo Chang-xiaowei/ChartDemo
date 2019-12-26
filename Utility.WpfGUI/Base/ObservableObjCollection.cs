@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Utility.WpfGUI
 {
-    class ObservableObjCollection
+   public abstract class ObservableObjCollection
     {
+
     }
 }

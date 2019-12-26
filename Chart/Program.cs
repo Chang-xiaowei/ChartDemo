@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WCF.Interfaces;
 
-namespace Chart
+namespace Chat
 {
     class Program
     {

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{302CF18F-8205-4630-8C2F-5A6B1379B272}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Chart</RootNamespace>
-    <AssemblyName>Chart</AssemblyName>
+    <RootNamespace>Chat</RootNamespace>
+    <AssemblyName>Chat</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

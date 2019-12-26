@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ServiceModel;
 
-namespace ChartServerModule
+namespace ChatServerModule
 {
     class Program
     {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using WCF.Datas;
 using WCF.Interfaces;
 
-namespace ChartServerModule
+namespace ChatServerModule
 {
 
     [ServiceBehavior(InstanceContextMode =InstanceContextMode.Single,
