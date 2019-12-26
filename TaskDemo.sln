@@ -25,9 +25,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.Interfaces", "WCF.Inter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF.Datas", "WCF.Datas\WCF.Datas.csproj", "{A428B987-4DB7-481B-96E0-64DA5813680A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat", "Chart\Chat.csproj", "{302CF18F-8205-4630-8C2F-5A6B1379B272}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat", "Chat\Chat.csproj", "{302CF18F-8205-4630-8C2F-5A6B1379B272}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServerModule", "ChartServerModule\ChatServerModule.csproj", "{C1612EED-F8BA-48C4-B2AC-288C15F735EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServerModule", "ChatServerModule\ChatServerModule.csproj", "{C1612EED-F8BA-48C4-B2AC-288C15F735EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceProxy", "ServiceProxy\ServiceProxy.csproj", "{1B5039A5-43EE-4CD4-9E67-B21624CD4CB3}"
 EndProject
