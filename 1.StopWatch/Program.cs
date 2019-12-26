@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Utility.Tools;
 
 namespace _1.StopWatchDemo
 {
@@ -12,6 +13,7 @@ namespace _1.StopWatchDemo
     {
         static void Main(string[] args)
         {
+           String s= PathHelper.GetStartupPath();
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             Thread.Sleep(1000);

@@ -8,6 +8,9 @@ namespace Utility.Tools
 {
     public static class PathHelper
     {
-
+        public static string GetStartupPath()
+        {
+            return AppDomain.CurrentDomain.BaseDirectory;
+        }
     }
 }
