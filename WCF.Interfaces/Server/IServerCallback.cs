@@ -10,7 +10,7 @@ namespace WCF.Interfaces
 {
     public interface IServerCallback
     {
-        [OperationContract(IsOneWay = true)]
-        void Display(double result);
+        [OperationContract(IsOneWay = true)]      
+        void SendData(string msg);
     }
 }

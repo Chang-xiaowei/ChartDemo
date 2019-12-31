@@ -39,14 +39,10 @@ namespace ServiceProxy
                 Console.WriteLine(ex.Message);
             }
 
-        }
-        public void Add(double x, double y)
+        }       
+        public void Send(string msg)
         {
-            base.Channel.Add(x, y);
-        }
-        public void Send(string testBeatHea)
-        {
-            base.Channel.Send(null);
+            base.Channel.Send(msg);
         }
     }
 }

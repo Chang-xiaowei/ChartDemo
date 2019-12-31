@@ -9,9 +9,13 @@ namespace ServiceProxy
 {
     public class ServerCallback : IServerCallback
     {
-        public void Display(double result)
+        //public void Display(double result)
+        //{
+        //    Console.WriteLine("The result is:{0}", result);
+        //}
+        public void SendData(string msg)
         {
-            Console.WriteLine("The result is:{0}", result);
+            Console.WriteLine(msg);
         }
     }
 }

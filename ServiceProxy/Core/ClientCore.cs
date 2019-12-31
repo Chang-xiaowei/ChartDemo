@@ -29,9 +29,9 @@ namespace ServiceProxy.Core
         {
             return mInstance;
         }
-        public void Add(double x,double y)
+        public void Send(string msg)
         {
-            mServerServiceProxy.Add(x,y);
+            mServerServiceProxy.Send(msg);
         }
         #endregion
 

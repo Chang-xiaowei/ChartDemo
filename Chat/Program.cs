@@ -14,8 +14,7 @@ namespace Chat
         private static ServerProxyCore mServiceCore = ServerProxyCore.GetInStance();
         static void Main(string[] args)
         {
-            mServiceCore.Add(5.0,5.0);
-
+            mServiceCore.Send("Test");
             Console.ReadKey();
         }
     }

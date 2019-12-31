@@ -26,17 +26,17 @@ namespace ChatServerModule
         #region - Properties -
 
         #endregion
-
+            
         #region - Constructors -
 
         #endregion
 
         #region - public Functions -
-        public void Add(double x, double y)
-        {
-            double result = x + y;
-            OperationContext.Current.GetCallbackChannel<IServerCallback>().Display(result);           
-        }
+        //public void Add(double x, double y)
+        //{
+        //    double result = x + y;
+        //    OperationContext.Current.GetCallbackChannel<IServerCallback>().Display(result);           
+        //}
 
         public void Dispose()
         {
@@ -64,13 +64,9 @@ namespace ChatServerModule
             Console.WriteLine("Listener count:" + mClientDatadics.Count().ToString());         
         }
 
-        public void Send(string testBeatHeat)
+        public void Send(string msg)
         {
-            if (null ==testBeatHeat)
-            {
-                return;
-            }
-            mServerCore.Send(testBeatHeat);
+            OperationContext.Current.GetCallbackChannel<IServerCallback>().SendData(msg);
         }
         #endregion
 

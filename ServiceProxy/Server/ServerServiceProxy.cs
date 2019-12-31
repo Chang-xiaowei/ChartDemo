@@ -74,14 +74,11 @@ namespace ServiceProxy
                 mClient.Exit();
             }
         }
-        public void Add(double x, double y)
-        {
-            mClient.Add(x, y);
-        }
+       
 
-        public void Send(string testBeatHeat)
+        public void Send(string msg)
         {
-            mClient.Send(testBeatHeat);
+            mClient.Send(msg);
         }
 
         #endregion

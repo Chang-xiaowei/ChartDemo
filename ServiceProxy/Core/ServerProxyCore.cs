@@ -41,9 +41,9 @@ namespace ServiceProxy
         {
             return mInstance;
         }
-        public void Add(double x,double y)
+       public void Send(string msg)
         {
-            mCore.Add(x,y);
+            mServerServiceProxy.Send(msg);
         }
         public void Join()
         {

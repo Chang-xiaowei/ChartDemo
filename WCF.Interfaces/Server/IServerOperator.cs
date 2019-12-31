@@ -19,10 +19,7 @@ namespace WCF.Interfaces
         [OperationContract(IsOneWay = true, IsInitiating = false, IsTerminating = true)]
         void Exit();
 
-        [OperationContract(IsOneWay = true, IsInitiating = true, IsTerminating = false)]
-        void Add(double x, double y);
-
         [OperationContract(IsOneWay = true,IsInitiating =true,IsTerminating =false)]
-        void Send(string testBeatHea);//为了测试心跳
+        void Send(string msg);//发送消息
     }
 }
