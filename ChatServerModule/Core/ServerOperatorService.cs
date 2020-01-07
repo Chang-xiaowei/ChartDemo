@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using WCF.Datas;
 using WCF.Interfaces;
 
@@ -67,6 +65,7 @@ namespace ChatServerModule
         public void Send(string msg)
         {
             OperationContext.Current.GetCallbackChannel<IServerCallback>().SendData(msg);
+            mServerCore.Send(msg);//发送给其他客户端
         }
         #endregion
 

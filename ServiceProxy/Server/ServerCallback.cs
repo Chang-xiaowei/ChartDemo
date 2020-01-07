@@ -15,7 +15,7 @@ namespace ServiceProxy
         //}
         public void SendData(string msg)
         {
-            Console.WriteLine(msg);
+            Console.WriteLine("服务器端返回"+msg);
         }
     }
 }

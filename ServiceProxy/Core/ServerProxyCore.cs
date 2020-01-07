@@ -43,6 +43,7 @@ namespace ServiceProxy
         }
        public void Send(string msg)
         {
+            
             mServerServiceProxy.Send(msg);
         }
         public void Join()

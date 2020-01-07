@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceModel;
 using WCF.Datas;
 
 namespace WCF.Interfaces
 {
     [ServiceContract(Name = "ServerOperatorService",
-                     SessionMode = SessionMode.Required,                   
+                     SessionMode = SessionMode.Required,
                      CallbackContract = typeof(IServerCallback))]
     public interface IServerOperator
     {
@@ -19,7 +14,7 @@ namespace WCF.Interfaces
         [OperationContract(IsOneWay = true, IsInitiating = false, IsTerminating = true)]
         void Exit();
 
-        [OperationContract(IsOneWay = true,IsInitiating =true,IsTerminating =false)]
+        [OperationContract(IsOneWay = true, IsInitiating = false, IsTerminating = false)]
         void Send(string msg);//发送消息
     }
 }
